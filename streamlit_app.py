@@ -9,7 +9,7 @@ streamlit.text( "Be sure to wake up early" )
 streamlit.header ("What should I plan Next ? I should Eat some fruits")
 
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
-my_fruit_list.set_index('Fruit')
+my_fruit_list = my_fruit_list.set_index('Fruit')
 streamlit.multiselect("Pick some fruits for me:" , list(my_fruit_list.index))
 
 streamlit.dataframe(my_fruit_list)
